@@ -15,7 +15,7 @@ $ make run
 - Connect the testbench and Guassian Filter module using FIFO channels.
 
 ### Block Diagram
-![image](https://github.com/eric900115/Electronic-System-Level-Design/blob/main/hw1-SystemC/img/BlockDiagram_Part1.png?raw=true)
+![image](https://github.com/eric900115/EE6470-HW1/blob/main/img/BlockDiagram_Part1.png?raw=true)
 
 
 ### Implementaion
@@ -126,7 +126,7 @@ $ make run
 - You may choose to orgranize the buffer as row buffer (1x5, 1x16, 1x25), column buffer (5x1, 16x1, 25x1), or 2D buffer (4x4, 5x5).
 
 ### Block Diagram
-![image](https://github.com/eric900115/Electronic-System-Level-Design/blob/main/hw1-SystemC/img/BlockDiagram_Part2.png?raw=true)
+![image](https://github.com/eric900115/EE6470-HW1/blob/main/img/BlockDiagram_Part2.png?raw=true)
 
 ### Implementation
 
@@ -278,4 +278,4 @@ void Testbench::do_guassian() {
 ### Compare the number of pixel transfer of between the original implementation and the one with buffers
 - Part1 (without buffer) : To calculate each output pixel, it requires $5 \times 5 + 1$ data transfer. Considering there are $256 \times 256$ pixels in the case, it requires $256 \times 256 \times (5 \times 5 + 1)$ data tansfers.
 - Part2 (with buffer) : To calculatethe first pixel of a row, it requires $5 \times 5 + 1$ data transfer. The remaining pixels require only $5 + 1$ data transfer. Given there are 256 rows and 256 columns, it requires $256 \times (5 \times 5 + 1) + 256 \times 255 \times (5 + 1)$ data tensfers.
-- The amountof data transfer for Part1 is $\dfrac{256 \times 256 \times (5 \times 5 + 1)}{256 \times (5 \times 5 + 1) + 256 \times 255 \times (5 + 1)} = 4.28$ times greater than Part2.
+- The amount of data transfer for Part1 is $\dfrac{256 \times 256 \times (5 \times 5 + 1)}{256 \times (5 \times 5 + 1) + 256 \times 255 \times (5 + 1)} = 4.28$ times greater than Part2.
